@@ -137,18 +137,17 @@ public class AreaPickerDialog extends Dialog {
                     }
                     mItemsMap.put(mCategories.get(position).getName(), items);
 
-                    mProgressBar.setVisibility(View.GONE);
                     if (mCategorySelectedIndex == position) {
+                        mProgressBar.setVisibility(View.GONE);
                         mItemAdapter.refresh(items);
                     }
                     mGvItems.setSelection(0);
                 }
             }, 3000);
         } else {
-            mProgressBar.setVisibility(View.GONE);
-
             items = mItemsMap.get(mCategories.get(position).getName());
             if (mCategorySelectedIndex == position) {
+                mProgressBar.setVisibility(View.GONE);
                 mItemAdapter.refresh(items);
             }
             mGvItems.setSelection(0);
